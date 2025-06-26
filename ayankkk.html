@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>🎉 Happyyy Birthdayyy, Sayanggg 💖</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(to top right, #ffc0cb, #ff69b4);
+      font-family: 'Comic Sans MS', cursive;
+      overflow-x: hidden;
+      text-align: center;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin: 30px 20px 10px 20px;
+      color: #fff;
+      animation: bounce 1s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    #typed {
+      font-size: 1.2em;
+      margin: 10px 20px;
+      width: 90%;
+      max-width: 700px;
+      white-space: pre-line;
+      text-shadow: 2px 2px #c2185b;
+      min-height: 200px;
+      overflow-y: auto;
+      max-height: 40vh;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+    }
+
+    .emoji, .heart {
+      position: absolute;
+      animation: floatUp 5s linear infinite;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+
+    .emoji {
+      font-size: 2em;
+    }
+
+    .heart {
+      width: 20px;
+      height: 20px;
+      background-color: pink;
+      transform: rotate(45deg);
+    }
+
+    .heart::before, .heart::after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background-color: pink;
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    button {
+      margin: 8px;
+      padding: 10px 16px;
+      font-size: 1em;
+      background: #ff4081;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: #d81b60;
+      transform: scale(1.05);
+    }
+
+    #respon {
+      font-size: 1.3em;
+      color: #fff;
+      margin: 20px 20px 50px 20px;
+      text-shadow: 2px 2px #880e4f;
+      max-width: 700px;
+      padding: 10px;
+      overflow-wrap: break-word;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8em;
+      }
+
+      #typed {
+        font-size: 1em;
+        max-height: 45vh;
+      }
+
+      button {
+        font-size: 0.9em;
+        padding: 10px 14px;
+      }
+
+      #respon {
+        font-size: 1.1em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎂 Piiibesdeeeyyy, Ayankkk 💕</h1>
+  <div id="typed"></div>
+
+  <button onclick="cium()">Tiummm Accuuu 😘</button>
+  <button onclick="sayang()">Acuuu Cayanggg Ayankk 💘</button>
+  <button onclick="surprise()">Klikkk kalawww ayankk cayankk acuuu 😍</button>
+
+  <p id="respon"></p>
+
+  <script>
+    const pesan = [
+      "Hayyy sayangkuuu 💖",
+      "Hariii inihhh kann hariii palinkkk cepecialll...",
+      "Karenaaa ayankk lahirrr diii duniaaa, dannn jadiii milikkk acuu 😚",
+      "Acuuuu cumannn mawww bilankkk...",
+      "Terimaaa kasihhh udahhh bertahannnn, udah sabarrr, dannn selaluuu adaaa yawww 🥰",
+      "Ayankk ituhh lucuuuu, imupp, dan agakk nyebelinn jugaaa 😆",
+      "Doakuuu hariii iniii:",
+      "cemogaaa ayankk makinnn bahagiaaa, sehattt, dannn tetappp jadiii cewekkkk manjaaahhh kesayangannn akuuuhhh 💋",
+      "Dannn ingattt...",
+      "Acuuu cintaaa ayankk celamanyaaa 💞"
+    ];
+
+    let i = 0;
+    let j = 0;
+    let speed = 50;
+    const typed = document.getElementById("typed");
+
+    function typeText() {
+      if (i < pesan.length) {
+        if (j < pesan[i].length) {
+          typed.innerHTML += pesan[i].charAt(j);
+          j++;
+          setTimeout(typeText, speed);
+        } else {
+          typed.innerHTML += '\n\n';
+          i++;
+          j = 0;
+          setTimeout(typeText, 800);
+        }
+      }
+    }
+
+    typeText();
+
+    function cium() {
+      document.getElementById("respon").innerText = "💋 Muuachh! Ciummm Aslii cinihhh";
+    }
+
+    function sayang() {
+      document.getElementById("respon").innerText = "💖 Acuuu ugaaa sayaaanggg bangetttzzz camaaa ayankkk, lebihhhh dariiii apapunnn";
+    }
+
+    function surprise() {
+      document.getElementById("respon").innerText = "🎁 Ayankk klikkk iniihhh... berartiii ayankkk jugaaa cintaaa aku. Akuu senanggg bangetttzz awww adaa kadoo 💕";
+    }
+
+    const emojiList = ['💖','💋','💕','🥰','😍','🌹','😘','😚','❤️','💞'];
+    setInterval(() => {
+      const emoji = document.createElement('div');
+      emoji.className = 'emoji';
+      emoji.innerText = emojiList[Math.floor(Math.random() * emojiList.length)];
+      emoji.style.left = Math.random() * 100 + 'vw';
+      emoji.style.top = '100vh';
+      emoji.style.fontSize = Math.random() * 20 + 24 + 'px';
+      emoji.style.animationDuration = (3 + Math.random() * 3) + 's';
+      document.body.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 5000);
+    }, 300);
+
+    for (let h = 0; h < 30; h++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.top = Math.random() * 100 + 100 + 'vh';
+      heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+      document.body.appendChild(heart);
+    }
+  </script>
+
+</body>
+</html>
